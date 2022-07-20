@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as a,a as l}from"./app.42d99ac3.js";const d=JSON.parse('{"title":"github actions\u81EA\u52A8\u90E8\u7F72gitee","description":"","frontmatter":{},"headers":[],"relativePath":"index.md"}'),e={name:"index.md"},t=l("",7),p=[t];function o(c,i,r,y,A,C){return a(),n("div",null,p)}var g=s(e,[["render",o]]);export{d as __pageData,g as default};
