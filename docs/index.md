@@ -1,0 +1,78 @@
+# github actions自动部署gitee
+
+说明：当你的代码每次提交到github上时，代码可以自动同步到gitee，并且可以实现自动部署。
+
+## 在github和gitee分别创建代码仓库，并且仓库要设置为公开的状态
+
+## cmd中运行 `ssh-keygen -t rsa -C "youremail@example.com"` ，连续三次回车，生成公钥(.pub)和私钥，记得替换成自己的邮箱地址。
+
+## github点击个人头像下面的 `Settings -> Developer settings -> Personal access tokens` 生成一个新的令牌，记得保存这个令牌，离开该页面就看不见了。当然你也可以重新生成，不过下面的变量也需要跟着改变。
+
+## github点击个人头像下面的 `Settings -> Developer settings -> SSH and GPG keys` 将刚才生成的公钥配置进去，名字随意
+
+## gitee点击个人头像下面的 `设置 -> 安全设置 -> SSH公钥` 将刚才生成的公钥配置进去，名字随意
+
+## 进入github对应的代码仓库 进入 `settings -> secrets -> actions` 中分别配置如下三个变量
+
+| 变量名        | 值           |
+| ------------- |:-------------:|
+| ACCESS_TOKEN  | 步骤三生成的令牌 |
+| GITEE_RSA_PRIVATE_KEY      | 步骤二生成的密钥      |
+| GITEE_PASSWORD | gitee密码     |
+
+## 在你的项目根目录下创建.github/workflows文件夹，再此文件夹下面新建一个yml文件，名字随意,复制下面的任务命令到文件夹下面
+
+```bash
+name: Build and Deploy
+
+on: # 事件
+  push:
+    branches:
+      - main #推送到远程分支main之后触发
+jobs: # 任务
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
+
+      - name: Install and Build 🔧 # 此示例项目使用npm构建，并将结果输出到“build”文件夹。替换为生成项目所需的命令，或者如果站点是预构建的，则完全删除此步骤.
+        run: |
+          npm install   # 先安装依赖
+          npm run build:prod # 执行打包命令
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.6
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # 自己仓库配置的令牌
+        with:
+          branch: gh-pages # 将打包后的目录部署在gh-pages分支
+          folder: dist # 打包后生成的目录地址
+
+      #以下配置同步代码到gitee仓库并自动部署
+      - name: Sync to Gitee
+        uses: wearerequired/git-mirror-action@master
+        env:
+          # 注意在 Settings->Secrets 配置 GITEE_RSA_PRIVATE_KEY
+          SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }} # 仓库配置的私钥
+        with:
+          # 注意替换为你的 GitHub 源仓库地址
+          source-repo: git@github.com:mao-118/fast-vue-admin.git
+          # 注意替换为你的 Gitee 目标仓库地址
+          destination-repo: git@gitee.com:mao-118/fast-vue-admin.git
+
+      - name: Build Gitee Pages
+        uses: yanglbme/gitee-pages-action@main
+        with:
+          # 注意替换为你的 Gitee 用户名
+          gitee-username: mao-118
+          # 注意在 Settings->Secrets 配置 GITEE_PASSWORD
+          gitee-password: ${{ secrets.GITEE_PASSWORD }}
+          # 注意替换为你的 Gitee 仓库，仓库名严格区分大小写，请准确填写，否则会出错
+          gitee-repo: mao-118/fast-vue-admin
+          # 要部署的分支，默认是 master，若是其他分支，则需要指定(指定的分支必须存在)
+          branch: gh-pages
+
+```
+## 微信关注 `gitee` 公众号，这样可以绕开校验，直接登录你的gitee（国外）
+## 之后每次提交代码到github的 main分支下就会同步到gitee中，并且会自动部署(gitee记得打开 `gitee pages` 服务)
