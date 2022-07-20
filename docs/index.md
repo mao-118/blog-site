@@ -2,17 +2,17 @@
 
 说明：当你的代码每次提交到github上时，代码可以自动同步到gitee，并且可以实现自动部署。
 
-## 在github和gitee分别创建代码仓库，并且仓库要设置为公开的状态
+1. 在github和gitee分别创建代码仓库，并且仓库要设置为公开的状态
 
-## cmd中运行 `ssh-keygen -t rsa -C "youremail@example.com"` ，连续三次回车，生成公钥(.pub)和私钥，记得替换成自己的邮箱地址。
+2. cmd中运行 `ssh-keygen -t rsa -C "youremail@example.com"` ，连续三次回车，生成公钥(.pub)和私钥，记得替换成自己的邮箱地址。
 
-## github点击个人头像下面的 `Settings -> Developer settings -> Personal access tokens` 生成一个新的令牌(勾选上仓库信息一项，或者全部勾选也无大碍)，记得保存这个令牌，离开该页面就看不见了。当然你也可以重新生成，不过下面的变量也需要跟着改变。
+3. github点击个人头像下面的 `Settings -> Developer settings -> Personal access tokens` 生成一个新的令牌(勾选上仓库信息一项，或者全部勾选也无大碍)，记得保存这个令牌，离开该页面就看不见了。当然你也可以重新生成，不过下面的变量也需要跟着改变。
 
-## github点击个人头像下面的 `Settings -> Developer settings -> SSH and GPG keys` 将刚才生成的公钥配置进去，名字随意
+4. github点击个人头像下面的 `Settings -> Developer settings -> SSH and GPG keys` 将刚才生成的公钥配置进去，名字随意
 
-## gitee点击个人头像下面的 `设置 -> 安全设置 -> SSH公钥` 将刚才生成的公钥配置进去，名字随意
+5. gitee点击个人头像下面的 `设置 -> 安全设置 -> SSH公钥` 将刚才生成的公钥配置进去，名字随意
 
-## 进入github对应的代码仓库 进入 `settings -> secrets -> actions` 中分别配置如下三个变量
+6. 进入github对应的代码仓库 进入 `settings -> secrets -> actions` 中分别配置如下三个变量
 
 | 变量名        | 值           |
 | ------------- |:-------------:|
@@ -20,7 +20,7 @@
 | GITEE_RSA_PRIVATE_KEY      | 步骤二生成的密钥      |
 | GITEE_PASSWORD | gitee密码     |
 
-## 在你的项目根目录下创建.github/workflows文件夹，再此文件夹下面新建一个yml文件，名字随意,复制下面的任务命令到文件夹下面
+7. 在你的项目根目录下创建.github/workflows文件夹，再此文件夹下面新建一个yml文件，名字随意,复制下面的任务命令到文件夹下面
 
 ```bash
 name: Build and Deploy
@@ -74,5 +74,5 @@ jobs: # 任务
           branch: gh-pages
 
 ```
-## 微信关注 `gitee` 公众号，这样可以绕开校验，直接登录你的gitee（国外）
-## 之后每次提交代码到github的 main分支下就会同步到gitee中，并且会自动部署(gitee记得打开 `gitee pages` 服务)
+8. 微信关注 `gitee` 公众号，这样可以绕开校验，直接登录你的gitee（国外）
+9. 之后每次提交代码到github的 main分支下就会同步到gitee中，并且会自动部署(gitee记得打开 `gitee pages` 服务)
