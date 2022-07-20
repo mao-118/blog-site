@@ -6,7 +6,7 @@
 
 ## cmd中运行 `ssh-keygen -t rsa -C "youremail@example.com"` ，连续三次回车，生成公钥(.pub)和私钥，记得替换成自己的邮箱地址。
 
-## github点击个人头像下面的 `Settings -> Developer settings -> Personal access tokens` 生成一个新的令牌，记得保存这个令牌，离开该页面就看不见了。当然你也可以重新生成，不过下面的变量也需要跟着改变。
+## github点击个人头像下面的 `Settings -> Developer settings -> Personal access tokens` 生成一个新的令牌(勾选上仓库信息一项，或者全部勾选也无大碍)，记得保存这个令牌，离开该页面就看不见了。当然你也可以重新生成，不过下面的变量也需要跟着改变。
 
 ## github点击个人头像下面的 `Settings -> Developer settings -> SSH and GPG keys` 将刚才生成的公钥配置进去，名字随意
 
