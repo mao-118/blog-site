@@ -15,14 +15,20 @@ module.exports = {
     ],
     sidebar: [
       {
-        text: "技术博客",
+        text: "vue",
         items: [
-          { text: "homepage", link: "/" },
-          { text: "代码自动同步并部署", link: "/代码自动同步并部署" },
-          { text: "webpack", link: "/webpack基本配置" },
+          { text: "setup语法糖", link: "/" },
+          { text: "vue的生命周期都做了什么", link: "/简述生命周期以及每个阶段做的事" },
           { text: "vue项目打包优化", link: "/vue项目打包优化" }
         ],
       },
+      {
+        text:'other',
+        items:[
+          { text: "代码自动同步并部署", link: "/代码自动同步并部署" },
+          { text: "webpack", link: "/webpack基本配置" },
+        ]
+      }
     ],
     footer: {
       message: "Released under the MIT License.",
