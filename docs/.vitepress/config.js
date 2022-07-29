@@ -16,23 +16,27 @@ module.exports = {
     sidebar: [
       {
         text: "vue",
+        collapsible: true,
         items: [
           { text: "setup语法糖", link: "/" },
-          { text: "vue的生命周期都做了什么", link: "/简述生命周期以及每个阶段做的事" },
-          { text: "vue项目打包优化", link: "/vue项目打包优化" }
+          { text: "vue的生命周期都做了什么", link: "/vue/简述生命周期以及每个阶段做的事" },
+          { text: "vue项目打包优化", link: "/vue/vue项目打包优化" }
         ],
       },
       {
         text:'other',
+        collapsible: true,
         items:[
-          { text: "代码自动同步并部署", link: "/代码自动同步并部署" },
-          { text: "webpack", link: "/webpack基本配置" },
+          { text: "绿版vscode", link: "/other/绿版vscode" },
+          { text: "代码自动同步并部署", link: "/other/代码自动同步并部署" },
+          { text: "webpack", link: "/other/webpack基本配置" },
+          { text: "H5与客户端交互", link: "/other/H5与客户端交互" },
         ]
       }
     ],
     footer: {
       message: "Released under the MIT License.",
       copyright: "Copyright © 2019-present maolihang",
-    }
+    },
   },
 };

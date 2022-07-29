@@ -1,4 +1,4 @@
-# webpack的基本配置
+# webpack5 的基本配置
 
 ```js
     const {resolve} = require('path')
