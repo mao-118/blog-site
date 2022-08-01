@@ -20,7 +20,10 @@ module.exports = {
         items: [
           { text: "setup语法糖", link: "/" },
           { text: "vue的生命周期都做了什么", link: "/vue/简述生命周期以及每个阶段做的事" },
-          { text: "vue项目打包优化", link: "/vue/vue项目打包优化" }
+          { text: "vue项目打包优化", link: "/vue/vue项目打包优化" },
+          { text: "setup中如何定义组件的name属性", link: "/vue/setup中如何定义组件的name属性" },
+          { text: "vue中配置eslint保存自动修复", link: "/vue/vue中配置eslint保存自动修复" },
+          { text: "vue自动导入文件", link: "/vue/vue自动导入文件" },
         ],
       },
       {
