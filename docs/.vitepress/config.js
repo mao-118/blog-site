@@ -3,7 +3,11 @@ module.exports = {
   title: "blog",
   description: "vue&js&node&html&css",
   base: "/blog-site/",
+  head:[
+    ['link', { rel: 'icon', href: '/logo.jpg', crossorigin: '' }]
+  ],
   themeConfig: {
+    logo:'/avt.jpg',
     outlineTitle: "当前页面",
     socialLinks: [{ icon: "github", link: "https://github.com/mao-118" }],
     nav: [
@@ -34,6 +38,7 @@ module.exports = {
           { text: "代码自动同步并部署", link: "/other/代码自动同步并部署" },
           { text: "webpack", link: "/other/webpack基本配置" },
           { text: "H5与客户端交互", link: "/other/H5与客户端交互" },
+          { text: "开发中碰到的问题集合(碰到的坑)", link: "/other/开发中碰到的问题集合" },
         ]
       }
     ],
