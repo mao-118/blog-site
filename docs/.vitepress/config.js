@@ -4,7 +4,7 @@ module.exports = {
   description: "vue&js&node&html&css",
   base: "/blog-site/",
   head:[
-    ['link', { rel: 'icon', href: '/logo.jpg', crossorigin: '' }]
+    ['link', { rel: 'icon', href: '/blog-site/logo.jpg', crossorigin: '' }]
   ],
   themeConfig: {
     logo:'/avt.jpg',
@@ -38,7 +38,15 @@ module.exports = {
           { text: "代码自动同步并部署", link: "/other/代码自动同步并部署" },
           { text: "webpack", link: "/other/webpack基本配置" },
           { text: "H5与客户端交互", link: "/other/H5与客户端交互" },
+          { text: "前端常见的十个手写功能", link: "/other/前端常见的十个手写功能" },
           { text: "开发中碰到的问题集合(碰到的坑)", link: "/other/开发中碰到的问题集合" },
+        ]
+      },
+      {
+        text:'git',
+        collapsible:true,
+        items:[
+          {text:'git常用命令',link:"/git/git-base.md"}
         ]
       }
     ],
