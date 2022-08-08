@@ -1,4 +1,4 @@
-# vue自动导入文件
+# vue批量导入文件
 
 ## require.context
 - webpack中使用 `require.context` 实现自动导入
