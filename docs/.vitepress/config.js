@@ -4,7 +4,7 @@ module.exports = {
   description: "vue&js&node&html&css",
   base: "/blog-site/",
   head: [
-    ['link', { rel: 'icon', href: '/blog-site/logo.png', crossorigin: '' }]
+    ['link', { rel: 'icon', href: '/blog-site/logo.png', crossorigin: '' }],
   ],
   themeConfig: {
     logo: '/avt.jpg',
@@ -53,6 +53,11 @@ module.exports = {
         ]
       }
     ],
+    algolia: {
+      appId: 'CBJNVS1RP1',
+      apiKey: 'f2f4a9df81166f6b151fdf2c2aec1cdb',
+      indexName: 'mao-118'
+    },
     footer: {
       message: "Released under the MIT License.",
       copyright: "Copyright © 2019-present maolihang",
