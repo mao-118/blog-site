@@ -29,6 +29,7 @@ module.exports = {
           { text: "vue中配置eslint保存自动修复", link: "/vue/vue中配置eslint保存自动修复" },
           { text: "vue批量导入文件", link: "/vue/vue批量导入文件" },
           { text: "unplugin-auto-import自动导入组合api", link: "/vue/unplugin-auto-import自动导入组合api" },
+          { text: "vite打包配置(gzip、文件分类等)", link: "/vue/vite打包配置(gzip、文件分类等)" },
         ],
       },
       {

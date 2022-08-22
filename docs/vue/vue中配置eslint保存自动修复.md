@@ -10,7 +10,7 @@ npm install eslint --save-dev
 //执行命令
 ./node_modules/.bin/eslint --init
 
-//根据提示一步一步选择，默认会初始化一些配置并生成 .eslintrc文件
+//根据提示一步一步选择，会根据情况安装一些依赖并且默认会初始化一些配置生成 .eslintrc文件
 
 ```
 
