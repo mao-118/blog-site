@@ -30,7 +30,7 @@ module.exports = {
           { text: "vue批量导入文件", link: "/vue/vue批量导入文件" },
           { text: "unplugin-auto-import自动导入组合api", link: "/vue/unplugin-auto-import自动导入组合api" },
           { text: "vite打包配置(gzip、文件分类等)", link: "/vue/vite打包配置(gzip、文件分类等)" },
-          { text: "vite+vue3兼容低版本浏览器", link: "/vue/vite+vue3兼容低版本浏览器" },
+          { text: "h5兼容低版本浏览器", link: "/vue/h5兼容低版本浏览器" },
         ],
       },
       {
