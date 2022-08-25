@@ -1,0 +1,27 @@
+# vite+vue3兼容低版本浏览器
+部分机型h5会造成白屏现象
+## 安装插件
+```vue
+<!-- 安装 @vitejs/plugin-legacy -->
+npm i @vitejs/plugin-legacy -D
+<!--必须安装 Terser，因为 plugin-legacy 使用 Terser 进行缩小。-->
+npm i terser -D
+<!-- 安装 regenerator-runtime -->
+npm i regenerator-runtime -D
+```
+## 配置
+```js
+// vite.config.js中配置
+import legacy from '@vitejs/plugin-legacy';
+export default defineConfig({
+    plugins: [
+    vue(),
+    // 解决较老手机浏览器白屏的问题
+    // https://github.com/vitejs/vite/tree/main/packages/plugin-legacy
+    legacy({
+      targets: ['ie >= 11'],
+      additionalLegacyPolyfills: ['regenerator-runtime/runtime']
+    })
+  ]
+})
+```
