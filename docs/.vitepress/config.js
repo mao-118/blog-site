@@ -5,6 +5,7 @@ module.exports = {
   base: "/blog-site/",
   head: [
     ['link', { rel: 'icon', href: '/blog-site/logo.png', crossorigin: '' }],
+    ['meta', { name: 'referrer', content: 'never' }]
   ],
   themeConfig: {
     logo: '/avt.jpg',
@@ -22,7 +23,7 @@ module.exports = {
         text: "vue",
         collapsible: true,
         items: [
-          { text: "setup语法糖", link: "/" },
+          { text: "开箱即用的中后台管理模版", link: "/" },
           { text: "vue的生命周期都做了什么", link: "/vue/简述生命周期以及每个阶段做的事" },
           { text: "vue项目打包优化", link: "/vue/vue项目打包优化" },
           { text: "setup中如何定义组件的name属性", link: "/vue/setup中如何定义组件的name属性" },
@@ -31,6 +32,8 @@ module.exports = {
           { text: "unplugin-auto-import自动导入组合api", link: "/vue/unplugin-auto-import自动导入组合api" },
           { text: "vite打包配置(gzip、文件分类等)", link: "/vue/vite打包配置(gzip、文件分类等)" },
           { text: "h5兼容低版本浏览器", link: "/vue/h5兼容低版本浏览器" },
+          { text: "开箱即用的中后台管理模版", link: "/vue/开箱即用的中后台管理模版" },
+          { text: "一文解析Pinia和Vuex", link: "/vue/一文解析Pinia和Vuex" },
         ],
       },
       {
