@@ -46,6 +46,7 @@ module.exports = {
           { text: "H5与客户端交互", link: "/other/H5与客户端交互" },
           { text: "前端常见的十个手写功能", link: "/other/前端常见的十个手写功能" },
           { text: 'git常用命令', link: "/other/git-base.md" },
+          { text: 'Typescript中的常用高级类型', link: "/other/Typescript中的常用高级类型.md" },
 
         ]
       },
