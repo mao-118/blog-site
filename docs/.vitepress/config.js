@@ -47,6 +47,7 @@ module.exports = {
           { text: "前端常见的十个手写功能", link: "/other/前端常见的十个手写功能" },
           { text: 'git常用命令', link: "/other/git-base.md" },
           { text: 'Typescript中的常用高级类型', link: "/other/Typescript中的常用高级类型.md" },
+          { text: 'webAPI实用知识点', link: "/other/webAPI实用知识点.md" },
 
         ]
       },
