@@ -37,7 +37,7 @@ module.exports = {
           { text: "Composition API_其它部分", link: "/vue/Composition API_其它部分" },
           { text: "手写组合API", link: "/vue/手写组合API" },
           { text: "Composition VS Option", link: "/vue/Composition VS Option" },
-
+          { text: "创建vue3项目", link: "/vue/创建vue3项目" },
         ],
       },
       {
@@ -52,7 +52,6 @@ module.exports = {
           { text: 'git常用命令', link: "/other/git-base.md" },
           { text: 'Typescript中的常用高级类型', link: "/other/Typescript中的常用高级类型.md" },
           { text: 'webAPI实用知识点', link: "/other/webAPI实用知识点.md" },
-
         ]
       },
       {
