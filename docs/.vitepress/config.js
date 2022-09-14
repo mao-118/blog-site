@@ -33,7 +33,11 @@ module.exports = {
           { text: "vite打包配置(gzip、文件分类等)", link: "/vue/vite打包配置(gzip、文件分类等)" },
           { text: "h5兼容低版本浏览器", link: "/vue/h5兼容低版本浏览器" },
           { text: "开箱即用的中后台管理模版", link: "/vue/开箱即用的中后台管理模版" },
-          { text: "一文解析Pinia和Vuex", link: "/vue/一文解析Pinia和Vuex" },
+          { text: "Composition API_常用部分", link: "/vue/Composition API_常用部分" },
+          { text: "Composition API_其它部分", link: "/vue/Composition API_其它部分" },
+          { text: "手写组合API", link: "/vue/手写组合API" },
+          { text: "Composition VS Option", link: "/vue/Composition VS Option" },
+
         ],
       },
       {
