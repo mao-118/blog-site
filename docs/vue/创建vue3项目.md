@@ -4,8 +4,8 @@
 
 - Vue.js 3.0 "One Piece" 正式版在今年9月份发布
 - 2年多开发, 100+位贡献者, 2600+次提交, 600+次PR
-- <font color='red'>Vue3支持vue2的大多数特性</font>
-- <font color='red'>更好的支持Typescript</font>
+- <span style="color:red;">Vue3支持vue2的大多数特性</span>
+- <span style="color:red;">更好的支持Typescript</span>
 
 
 
@@ -14,14 +14,14 @@
 - 打包大小减少41%
 - 初次渲染快55%, 更新渲染快133%
 - 内存减少54%
-- <font color='red'>使用Proxy代替defineProperty实现数据响应式</font>
-- <font color='red'>重写虚拟DOM的实现和Tree-Shaking</font>
+- <span style="color:red;">使用Proxy代替defineProperty实现数据响应式</span>
+- <span style="color:red;">重写虚拟DOM的实现和Tree-Shaking</span>
 
 
 
 ## 3) 新增特性 
 
-- <font color='red'>Composition (组合) API</font>
+- <span style="color:red;">Composition (组合) API</span>
 - setup
   - ref 和 reactive
   - computed 和 watch
