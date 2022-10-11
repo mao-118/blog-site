@@ -24,6 +24,7 @@ module.exports = {
         collapsible: true,
         items: [
           { text: "开箱即用的中后台管理模版", link: "/" },
+          { text: "看一遍就会的setup语法糖", link: "/vue/看一遍就会的setup语法糖" },
           { text: "vue的生命周期都做了什么", link: "/vue/简述生命周期以及每个阶段做的事" },
           { text: "vue项目打包优化", link: "/vue/vue项目打包优化" },
           { text: "setup中如何定义组件的name属性", link: "/vue/setup中如何定义组件的name属性" },
@@ -52,6 +53,7 @@ module.exports = {
           { text: 'git常用命令', link: "/other/git-base.md" },
           { text: 'Typescript中的常用高级类型', link: "/other/Typescript中的常用高级类型.md" },
           { text: 'webAPI实用知识点', link: "/other/webAPI实用知识点.md" },
+          { text: 'nvm的使用', link: "/other/nvm的使用.md" },
         ]
       },
       {
