@@ -1,4 +1,4 @@
-# Typescript 中的 Partial, Readonly, Record, Pick
+# Typescript 中常用的高级类型
 在 typescript （后面简称为 ts）中定义 interface（后面简称为“接口”） 时，常常需要对进行二次封装或调整，而 ts 在2.1版本中加入了一些程序类型工具，供开发者方便的进行此类操作。
 
 ::: info
@@ -36,7 +36,7 @@ type Record<K extends keyof any, T> = {
 };
 ```
 这些程序类型早在2016年就发布了，因此已经被很多框架或插件所使用。那么来依次说明：
-
+### 1
 ## Record
 以 typeof 格式快速创建一个类型，此类型包含一组指定的属性且都是必填。
 ```typescript
