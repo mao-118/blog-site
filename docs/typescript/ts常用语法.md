@@ -1,4 +1,4 @@
-# 1. 基础类型
+## 1. 基础类型
 
 TypeScript 支持与 JavaScript 几乎相同的数据类型，此外还提供了实用的枚举类型方便我们使用。
 
@@ -241,7 +241,7 @@ b10 = 123
 b10 = 'abc'
 ```
 
-# 2. 接口
+## 2. 接口
 
 TypeScript 的核心原则之一是对值所具有的结构进行类型检查。我们使用接口（Interfaces）来定义对象的类型。`接口是对象的状态(属性)和行为(方法)的抽象(描述)`  
 
@@ -428,7 +428,7 @@ interface LightableAlarm extends Alarm, Light {
 
 }
 ```
-# 3. 类
+## 3. 类
 
 对于传统的 JavaScript 程序我们会使用`函数`和`基于原型的继承`来创建可重用的组件，但对于熟悉使用面向对象方式的程序员使用这些语法就有些棘手，因为他们用的是`基于类的继承`并且对象是由类构建出来的。 从 ECMAScript 2015，也就是 ES6 开始， JavaScript 程序员将能够使用基于类的面向对象的方式。 使用 TypeScript，我们允许开发者现在就使用这些特性，并且编译后的 JavaScript 可以在所有主流浏览器和平台上运行，而不需要等到下个 JavaScript 版本。
 
@@ -756,7 +756,7 @@ const dog = new Dog()
 dog.cry()
 dog.run()
 ```
-# 4. 函数
+## 4. 函数
 
 函数是 JavaScript 应用程序的基础，它帮助你实现抽象层，模拟类，信息隐藏和模块。在 TypeScript 里，虽然已经支持类，命名空间和模块，但函数仍然是主要的定义行为的地方。TypeScript 为 JavaScript 函数添加了额外的功能，让我们可以更容易地使用。
 
@@ -875,7 +875,7 @@ console.log(add(1, 2))
 console.log(add('a', 'b'))
 // console.log(add(1, 'a')) // error
 ```
-# 5. 泛型
+## 5. 泛型
 
 指在定义函数、接口或类的时候，不预先指定具体的类型，而在使用的时候再指定具体类型的一种特性。
 
@@ -1029,7 +1029,7 @@ function fn2 <T extends Lengthwise>(x: T): void {
 fn2('abc')
 // fn2(123) // error  number没有length属性
 ```
-# 6. 其它
+## 6. 其它
 
 ## 声明文件
 
