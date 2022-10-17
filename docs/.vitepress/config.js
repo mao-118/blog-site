@@ -8,7 +8,7 @@ module.exports = {
     ['meta', { name: 'referrer', content: 'never' }]
   ],
   themeConfig: {
-    logo: '/avt.jpg',
+    // logo: '/avt.jpg',
     outlineTitle: "当前页面",
     socialLinks: [{ icon: "github", link: "https://github.com/mao-118" }],
     nav: [
@@ -56,7 +56,7 @@ module.exports = {
           { text: "绿版vscode", link: "/other/绿版vscode" },
           { text: "代码自动同步并部署", link: "/other/代码自动同步并部署" },
           { text: "webpack", link: "/other/webpack基本配置" },
-          { text: "H5与客户端交互", link: "/other/H5与客户端交互" },
+          // { text: "H5与客户端交互", link: "/other/H5与客户端交互" },
           { text: "前端常见的十个手写功能", link: "/other/前端常见的十个手写功能" },
           { text: 'git常用命令', link: "/other/git-base.md" },
           { text: 'webAPI实用知识点', link: "/other/webAPI实用知识点.md" },
