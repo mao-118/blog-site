@@ -39,6 +39,7 @@ module.exports = {
           { text: "手写组合API", link: "/vue/手写组合API" },
           { text: "Composition VS Option", link: "/vue/Composition VS Option" },
           { text: "创建vue3项目", link: "/vue/创建vue3项目" },
+          { text: "pinia的使用", link: "/vue/pinia的使用" },
         ],
       },
       {
