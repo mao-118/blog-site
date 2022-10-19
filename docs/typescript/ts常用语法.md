@@ -1,7 +1,6 @@
 ## 1. 基础类型
 
 TypeScript 支持与 JavaScript 几乎相同的数据类型，此外还提供了实用的枚举类型方便我们使用。
-
 ## 布尔值
 
 最基本的数据类型就是简单的 true/false 值，在JavaScript 和 TypeScript 里叫做 `boolean`（其它语言中也一样）。
