@@ -235,6 +235,9 @@ git push [remote] --force
 
 # 推送所有分支到远程仓库
 git push [remote] --all
+
+# 远程提交历史记录对不上导致报错  Git报错-refusing to merge unrelated histories 
+git pull origin master --allow-unrelated-histories
 ```
 ## 撤销
 ```bash
