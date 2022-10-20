@@ -211,6 +211,9 @@ import{_ as s,c as n,o as a,a as l}from"./app.8c5e3f9a.js";const F=JSON.parse('{
 <span class="line"></span>
 <span class="line"><span style="color:#676E95;font-style:italic;"># \u63A8\u9001\u6240\u6709\u5206\u652F\u5230\u8FDC\u7A0B\u4ED3\u5E93</span></span>
 <span class="line"><span style="color:#A6ACCD;">git push </span><span style="color:#89DDFF;">[</span><span style="color:#A6ACCD;">remote</span><span style="color:#89DDFF;">]</span><span style="color:#A6ACCD;"> --all</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#676E95;font-style:italic;"># \u8FDC\u7A0B\u63D0\u4EA4\u5386\u53F2\u8BB0\u5F55\u5BF9\u4E0D\u4E0A\u5BFC\u81F4\u62A5\u9519  Git\u62A5\u9519-refusing to merge unrelated histories </span></span>
+<span class="line"><span style="color:#A6ACCD;">git pull origin master --allow-unrelated-histories</span></span>
 <span class="line"></span></code></pre></div><h2 id="\u64A4\u9500" tabindex="-1">\u64A4\u9500 <a class="header-anchor" href="#\u64A4\u9500" aria-hidden="true">#</a></h2><div class="language-bash"><span class="copy"></span><pre><code><span class="line"><span style="color:#676E95;font-style:italic;"># \u6062\u590D\u6682\u5B58\u533A\u7684\u6307\u5B9A\u6587\u4EF6\u5230\u5DE5\u4F5C\u533A</span></span>
 <span class="line"><span style="color:#A6ACCD;">git checkout </span><span style="color:#89DDFF;">[</span><span style="color:#A6ACCD;">file</span><span style="color:#89DDFF;">]</span></span>
 <span class="line"></span>
