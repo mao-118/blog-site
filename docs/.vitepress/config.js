@@ -49,6 +49,7 @@ module.exports = {
           { text: 'ts常用语法', link: "/typescript/ts常用语法.md" },
           { text: 'ts的高级使用', link: "/typescript/ts的高级使用.md" },
           { text: 'Typescript中的常用高级类型', link: "/typescript/Typescript中的常用高级类型.md" },
+          { text: '链接生成二维码', link: "/typescript/链接生成二维码.md" },
         ]
       },
       {
