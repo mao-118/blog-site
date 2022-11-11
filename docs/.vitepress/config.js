@@ -28,7 +28,7 @@ module.exports = {
           { text: "vue的生命周期都做了什么", link: "/vue/简述生命周期以及每个阶段做的事" },
           { text: "vue项目打包优化", link: "/vue/vue项目打包优化" },
           { text: "setup中如何定义组件的name属性", link: "/vue/setup中如何定义组件的name属性" },
-          { text: "vue中配置eslint保存自动修复", link: "/vue/vue中配置eslint保存自动修复" },
+          { text: "vue+ts中配置eslint+prettier", link: "/vue/vue+ts中配置eslint+prettier" },
           { text: "vue批量导入文件", link: "/vue/vue批量导入文件" },
           { text: "unplugin-auto-import自动导入组合api", link: "/vue/unplugin-auto-import自动导入组合api" },
           { text: "vite打包配置(gzip、文件分类等)", link: "/vue/vite打包配置(gzip、文件分类等)" },
