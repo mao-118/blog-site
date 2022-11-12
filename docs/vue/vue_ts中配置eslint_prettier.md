@@ -1,4 +1,4 @@
-# vue3 + ts 中配置 eslint，并且保存自动修复
+# vue3 + ts 中配置 eslint+prettier，并且保存自动修复
 
 ## 安装 eslint
 
