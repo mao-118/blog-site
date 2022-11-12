@@ -146,6 +146,8 @@ npm i -D eslint-config-prettier
 }
 ```
 
+之后在文件中右键鼠标，将默认格式化工具设置为`prettier`，以后写完代码`ctrl + s`将自动格式化代码
+
 ## 命令
 
 ```js
