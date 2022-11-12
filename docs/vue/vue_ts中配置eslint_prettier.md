@@ -1,4 +1,27 @@
-# vue3 + ts 中配置 eslint+prettier，并且保存自动修复
+# vue3 + ts 中配置 eslint+prettier+standard，并且保存自动修复
+
+## vscode 插件
+
+`vscode` 打开插件库，搜索 `eslint`、`prettier`、`editorconfig` 进行下载
+
+## vscode 配置
+
+不要把配置文件加入到 gitignore
+
+根目录下创建 `.vscode/settings.json`
+
+```json
+{
+  // 保存时格式化
+  "editor.formatOnSave": true,
+  // 保存时候按eslint规则进行修复
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.format.enable": true, // 启用ESLint作为已验证文件的格式化程序
+  "vetur.validation.script": false // 禁用vetur的校验
+}
+```
 
 ## 安装 eslint
 
@@ -12,58 +35,73 @@ npm install eslint --save-dev
 //执行命令
 ./node_modules/.bin/eslint --init
 
-//根据提示一步一步选择，会根据情况安装一些依赖并且默认会初始化一些配置生成 .eslintrc文件
+// 1.选择第三个
+? How would you like to use ESLint? ...
+  To check syntax only
+  To check syntax and find problems
+> To check syntax, find problems, and enforce code style
 
+// 2. 选择es6模块化导入
+? What type of modules does your project use? ...
+> JavaScript modules (import/export)
+  CommonJS (require/exports)
+  None of these
+
+// 3. 选择vue
+? Which framework does your project use? ...
+  React
+> Vue.js
+  None of these
+
+// 4.安装ts
+? Does your project use TypeScript? » No / Yes
+
+// 5.选择推荐风格，这里我们直接选第一个跟着引导去选择aribn或者standard (本文中案例使用了standard)
+> Use a popular style guide
+  Answer questions about your style
+  Inspect your JavaScript file(s)
+
+// 6.选择yes，安装这些依赖
+? The style guide "standard" requires eslint@^7.12.1. You are currently using eslint@8.12.0.
+  Do you want to downgrade? » No / Yes
 ```
 
-::: tip
-注意：在 `ts` 项目中还需要配置 `@typescript-eslint/parser` 解析器，如下：
+修改初始化文件如下：
 
-```json
-"extends": [
-    "eslint:recommended", //开启默认的eslint基础校验
-    "plugin:vue/vue3-recommended", //开启eslint-plugin-vue规则校验
-    "plugin:vue/vue3-essential", //vue3核心的lint的规则
-    "plugin:@typescript-eslint/recommended" //ts
-],
-"parser": "vue-eslint-parser", //这里需要写入 vue-eslint-parser
-"parserOptions": {
-    "ecmaVersion": "latest",
-    "parser": "@typescript-eslint/parser", //这里写入 @typescript-eslint/parser
-    "sourceType": "module"
-}
+```js
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+  },
+  parser: "vue-eslint-parser",
+  extends: [
+    "standard", // standard风格
+    "plugin:vue/vue3-recommended", //eslint-plugin-vue 风格规范
+    "plugin:@typescript-eslint/recommended", // ts风格
+  ],
+  parserOptions: {
+    ecmaVersion: "latest",
+    parser: "@typescript-eslint/parser", // ts解析器
+    sourceType: "module",
+  },
+  plugins: [
+    "vue",
+    "@typescript-eslint", // ts插件
+  ],
+  rules: {},
+};
 ```
-
-:::
 
 ## 添加忽略文件
 
 根目录下创建 `.eslintignore` 文件
 
-## 配置规则
-
-- 更多规则可以查看 `eslint` 的[官方文档](http://eslint.cn/docs/rules/)
-
-```json
-{
-  "rules": {
-    "semi": ["error", "always"],
-    "quotes": ["error", "double"]
-  }
-}
-```
-
-## 保存修复
-
-vscode 中打开设置 setting.json 文件中加入配置 `"eslint.autoFixOnSave": true` 即可
-
-## vscode 插件
-
-`vscode` 打开插件库，搜索 `eslint` 进行下载
-
 ## 集成 prettier
 
 ```js
+// 安装 prettier
+npm i -D prettier
 // eslint prettier插件
 npm i -D eslint-plugin-prettier
 //解决eslint和prettier冲突
@@ -74,20 +112,25 @@ npm i -D eslint-config-prettier
 
 1. eslint 文件配置 prettier 插件
 
-```json{6}
+```json{5}
 "extends": [
-    "eslint:recommended", //开启默认的eslint基础校验
-    "plugin:vue/vue3-recommended", //开启eslint-plugin-vue规则校验
-    "plugin:vue/vue3-essential", //vue3核心的lint的规则
-    "plugin:@typescript-eslint/recommended", //ts
-    "plugin:prettier/recommended"// 配置prettier插件
+    "standard", // standard风格
+    "plugin:vue/vue3-recommended", //eslint-plugin-vue 风格规范
+    "plugin:@typescript-eslint/recommended", // ts风格
+    "plugin:prettier/recommended"// 配置prettier风格插件
 ],
-"parser": "vue-eslint-parser", //这里需要写入 vue-eslint-parser
+"parser": "vue-eslint-parser",
 "parserOptions": {
     "ecmaVersion": "latest",
-    "parser": "@typescript-eslint/parser", //这里写入 @typescript-eslint/parser
+    "parser": "@typescript-eslint/parser",
     "sourceType": "module"
-}
+},
+"rules": { //配置一些规则
+    "space-before-function-paren": 0,
+    "camelcase": 0,
+    "vue/attribute-hyphenation": 0,
+    "vue/multi-word-component-names": 0,
+  },
 ```
 
 2. 根目录下创建 `.prettierrc` 配置文件
@@ -112,17 +155,33 @@ npx prettier --write .
 npx prettier --write file.ts
 // 查看项目是否已经格式化（只检查文件是否已格式化，而不是覆盖它们）
 npx prettier --check .
+
+```
+
+## package.json 文件中配置命令
+
+```json
+"scripts": {
+  "lint": "eslint --ext .js,.ts,.vue src --fix", // eslint检查
+  "prettier": "prettier --write ." // 按照prettier一键修复所有文件
+}
 ```
 
 ## 忽略文件
 
 根目录下创建`.prettierignore`文件即可
 
-## vscode 插件
+```
+/dist/*
+/node_modules/*
+/static/*
+/public/*
+/*-lock.json
+.DS_Store
 
-`vscode` 打开插件库，搜索 `prettier` 进行下载
+```
 
-## 配置 EditorConfig
+## 配置 editorConfig
 
 根目录下创建 `.editorconfig`
 
