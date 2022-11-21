@@ -206,6 +206,20 @@ indent_style = tab
 
 ```
 
+::: tip
+windows 系统拉取格式化后的代码，可能会碰到行尾字符冲突的问题，需要做以下配置：
+
+1、git 全局配置命令：
+
+```
+git config --global core.autocrlf false
+```
+
+2、在 vscode 设置里搜索 eol,把 eol 设置为\n
+
+3、重新拉取项目即可
+:::
+
 ## 友情链接
 
 [eslint](http://eslint.cn/)
