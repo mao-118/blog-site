@@ -92,9 +92,21 @@ module.exports = {
             text: "前端常见的十个手写功能",
             link: "/other/前端常见的十个手写功能",
           },
-          { text: "git常用命令", link: "/other/git-base.md" },
-          { text: "webAPI实用知识点", link: "/other/webAPI实用知识点.md" },
-          { text: "nvm的使用", link: "/other/nvm的使用.md" },
+          { text: "git常用命令", link: "/other/git-base" },
+          { text: "webAPI实用知识点", link: "/other/webAPI实用知识点" },
+          { text: "nvm的使用", link: "/other/nvm的使用" },
+          {
+            text: "electron-vite的使用",
+            link: "/other/electron-vite的使用",
+          },
+          {
+            text: "parcel的使用",
+            link: "/other/parcel的使用",
+          },
+          {
+            text: "gsap动效与dat.gui界面",
+            link: "/other/gsap动效与dat.gui界面",
+          },
         ],
       },
       {
