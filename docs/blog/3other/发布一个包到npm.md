@@ -1,10 +1,43 @@
 # 发布一个包到 npm
 
-准备工作：
+## 准备工作：
 
 - 需要发布的包（代码）`.gitignore` 忽略 `node_modules`
 - README 描述文件
 - package.json 中配置作者、版本号等信息
+
+```json
+{
+  "name": "xxx-utils", // 包名，必须要独一无二
+  "version": "1.0.0", // 版本号
+  "author": "xxx", // 作者
+  "description": "common toolkit", // 描述信息
+  "keywords": ["utils", "format", "money", "phone"], // 关键词，提升SEO
+  "repository": {
+    // 代码托管位置
+    "type": "git",
+    "url": "https://github.com/xxx/xxx-utils"
+  },
+  "license": "ISC", // 许可证
+  "homepage": "https://your-package.org", // 包的主页或者文档首页
+  "bugs": "https://github.com/xxx/xxx-utils/issues", // 用户问题反馈地址
+  "main": "index.js", // 入口文件
+  "bin": {
+    // package.json运行时寻找的入口
+    "xxx-utils": "bin/xxx-utils.js"
+  },
+  "scripts": {
+    // 存放可执行脚本
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    // 运行依赖
+  },
+  "devDependencies": {
+    // 开发依赖
+  }
+}
+```
 
 ## 注册账号
 
@@ -53,3 +86,22 @@ npm publish
 [shields](https://shields.io/)
 
 复制生成好的地址到`README`描述文件中使用即可
+
+## npm 更新命令
+
+```ts
+// 自动更改版本号，并且commit
+// npm version xxx
+
+// 控制台会返回下一个小版本号 如v1.0.1
+npm version patch
+
+// minor：次版本号，增加新功能，如 v1.0.0->v1.1.0
+npm version minor
+
+// major：主版本号，不兼容的修改，如 v1.0.0->v2.0.0
+npm version major
+
+// 重新发布
+npm publish
+```
