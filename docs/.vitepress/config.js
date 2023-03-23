@@ -28,7 +28,7 @@ module.exports = {
       { text: "blog", link: "/blog/" },
       { text: "webpack5", link: "/webpack5/" },
       { text: "typescript", link: "/typescript/1快速入门" },
-      { text: "项目预览", link: "https://mao-118.github.io/fast-vue-admin/" },
+      { text: "项目预览", link: "https://mao-118.gitee.io/fast-vue-admin/" },
     ],
     sidebar: {
       ...getSideBar("blog"),
