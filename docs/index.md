@@ -4,7 +4,7 @@ layout: home
 hero:
   name: 日常写写
   text: 它可以带我回到曾经到过的地方，但时间是回不去了。
-  tagline: 你随意写的两行代码，却让我心心念念了好久好久...
+  # tagline: 你随意写的两行代码，却让我心心念念了好久好久...
   image:
     src: /logo.png
     alt: logo
