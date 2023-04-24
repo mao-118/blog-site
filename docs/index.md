@@ -3,7 +3,8 @@ layout: home
 
 hero:
   name: 日常写写
-  text: 它可以带我回到曾经到过的地方，但时间是回不去了。
+  text: 我有勇气我都不怕，管他寒冬炎夏。
+  tagline: 高筑墙，广积粮...
   image:
     src: /logo.png
     alt: logo
