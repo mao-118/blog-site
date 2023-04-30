@@ -30,3 +30,5 @@
 但是如果不是三个元素的情况下该如何做呢？
 ## Object.keys顺序问题
 Object.keys(obj).sort()
+
+## keep-alive多级缓存失效
