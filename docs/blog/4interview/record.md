@@ -32,3 +32,21 @@
 Object.keys(obj).sort()
 
 ## keep-alive多级缓存失效
+```js
+function handleKeepAlive(to) {
+  if (to.matched && to.matched.length > 2) {
+    for (let i = 0; i < to.matched.length; i++) {
+      const element = to.matched[i]
+      if (element.components.default.name === 'Emptyout') {
+        to.matched.splice(i, 1)
+        handleKeepAlive(to)
+      }
+      // 如果没有按需加载完成则等待加载
+      if (typeof element.components.default === 'function') {
+        element.components.default()
+        handleKeepAlive(to)
+      }
+    }
+  }
+}
+```
