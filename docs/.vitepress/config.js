@@ -26,8 +26,13 @@ module.exports = {
     socialLinks: [{ icon: "github", link: "https://github.com/mao-118" }],
     nav: [
       { text: "blog", link: "/blog/" },
-      { text: "webpack5", link: "/webpack5/" },
-      { text: "typescript", link: "/typescript/1快速入门" },
+      {
+        text:'大前端修炼',
+        items:[
+          { text: "webpack5", link: "/webpack5/" },
+          { text: "typescript", link: "/typescript/1快速入门" },
+        ] 
+      },
       { text: "项目预览", link: "https://mao-118.gitee.io/fast-vue-admin/" },
     ],
     sidebar: {
