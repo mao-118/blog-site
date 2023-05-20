@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a}from"./app.8cf3453c.js";const l=JSON.parse('{"title":"h5\u5524\u8D77app","description":"","frontmatter":{},"headers":[],"relativePath":"blog/H5\u4E0E\u5BA2\u6237\u7AEF\u4EA4\u4E92.md"}'),r={name:"blog/H5\u4E0E\u5BA2\u6237\u7AEF\u4EA4\u4E92.md"};function o(_,s,c,n,p,d){return t(),a("div")}var m=e(r,[["render",o]]);export{l as __pageData,m as default};
