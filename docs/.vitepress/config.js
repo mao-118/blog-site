@@ -17,15 +17,15 @@ module.exports = {
   description: "vue&js&node&html&css",
   base: "/blog-site/",
   head: [
-    ["link", { rel: "icon", href: "/blog-site/logo.png", crossorigin: "" }],
+    ["link", { rel: "icon", href: "/blog-site/logo.gif", crossorigin: "" }],
     ["meta", { name: "referrer", content: "never" }],
   ],
   themeConfig: {
-    // logo: '/avt.jpg',
+    logo: '/logo.gif',
     outlineTitle: "当前页面",
     socialLinks: [{ icon: "github", link: "https://github.com/mao-118" }],
     nav: [
-      { text: "blog", link: "/blog/" },
+      { text: "blog", link: "/blog/开箱即用的后台模板" },
       {
         text:'大前端修炼',
         // 斗者，斗师，大斗师，斗灵，斗王，斗皇，斗宗，斗尊，斗圣，斗帝
@@ -33,21 +33,20 @@ module.exports = {
         items:[ //基础：html，css,js,进阶：typescript,vue,react,uniapp,wxss，electron,微前端，构建工具：webpack,vite,超神：nodejs,express,算法，数据结构
           { text: "三剑客基础篇", link: "/base/" },
           { text: "typescript", link: "/typescript/" },
-          { text: "vue系列", link: "/" },
+          { text: "vue系列", link: "/vue/1vue/1认识vue" },
           { text: "react系列", link: "/" },
           { text: "uniapp", link: "/" },
           { text: "微信小程序", link: "/" },
           { text: "electron", link: "/" },
-          { text: "微前端", link: "/" },
+          { text: "微前端", link: "/minweb/微前端/微前端实现方案" },
           { text: "webpack", link: "/webpack/" },
-          { text: "vite", link: "/" },
-          { text: "nodejs", link: "/" },
-          { text: "express", link: "/" },
+          { text: "nodejs", link: "/nodejs/1认识nodejs" },
           { text: "算法及数据结构", link: "/" },
           { text: "设计模式", link: "/" },
 
         ] 
       },
+      { text: '案例精选', link: '/blog/' },
       { text: "项目预览", link: "https://mao-118.gitee.io/fast-vue-admin/" },
     ],
     sidebar: {
@@ -55,6 +54,9 @@ module.exports = {
       ...getSideBar("blog"),
       ...getSideBar("webpack"),
       ...getSideBar("typescript"),
+      ...getSideBar("vue"),
+      ...getSideBar("nodejs"),
+      ...getSideBar("minweb"),
     },
     algolia: {
       appId: "CBJNVS1RP1",

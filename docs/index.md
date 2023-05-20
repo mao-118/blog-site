@@ -5,20 +5,20 @@ hero:
   text: 我有勇气我都不怕，管他寒冬炎夏。
   tagline: 高筑墙，广积粮...
   image:
-    src: /logo.png
+    src: /logo.gif
     alt: logo
   actions:
     - theme: brand
       text: 立即前往 →
-      link: /blog/
+      link: /blog/开箱即用的后台模板
 features:
   - icon: 💪
     title: 循循渐进
     details: 温故知新，不断巩固
-  - icon: ⚡️
+  - icon: 🚀
     title: 勇往直前
     details: 不断探索，深耕技术
-  - icon: 🚀
+  - icon: 💡
     title: 学以致用
     details: 融合技能，勇于创新
 ---

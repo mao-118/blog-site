@@ -34,7 +34,7 @@ function getAllItems(dir) {
 //获取指定路径下的md文件路由，并根据开头数字进行排序，开头数字不在页面展示
 export function getSideBar(dir) {
   const list = fs.readdirSync(path.join(__dirname, "../", dir));
-  const folder = list.filter((f) => !/\.md$/.test(f));
+  const folder = list.filter((f) => !/\.md$/.test(f)&&f!=='images');
   const sidebar = {
     [`/${dir}/`]: [],
   };

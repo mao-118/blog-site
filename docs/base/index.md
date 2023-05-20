@@ -1,2 +1,12 @@
-# 前端三剑客
-从这里开始你的前端修炼吧
+
+This is a .md using a custom component
+
+<!-- <MyCom /> -->
+
+## More docs
+
+...
+
+<script setup>
+// import MyCom from './myCom.vue'
+</script>
