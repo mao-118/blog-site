@@ -31,18 +31,18 @@ module.exports = {
         // 斗者，斗师，大斗师，斗灵，斗王，斗皇，斗宗，斗尊，斗圣，斗帝
         //修仙者境界划分为下境界、中境界和上境界三大阶段，每个境界分为初、中、后期和大圆满。 1、下境界：炼气、筑基、结丹、 元婴 、化神。 2、中境界：炼虚、合体、大乘。 3、上境界：渡劫。
         items:[ //基础：html，css,js,进阶：typescript,vue,react,uniapp,wxss，electron,微前端，构建工具：webpack,vite,超神：nodejs,express,算法，数据结构
-          { text: "三剑客基础篇", link: "/base/" },
+          // { text: "三剑客基础篇", link: "/base/" },
           { text: "typescript", link: "/typescript/" },
-          { text: "vue系列", link: "/vue/1vue/1认识vue" },
-          { text: "react系列", link: "/" },
-          { text: "uniapp", link: "/" },
-          { text: "微信小程序", link: "/" },
-          { text: "electron", link: "/" },
+          { text: "vue系列", link: "/vue/1vue/1vue入门" },
+          { text: "react系列", link: "/react/1react/1react介绍" },
+          // { text: "uniapp", link: "/" },
+          // { text: "微信小程序", link: "/" },
+          // { text: "electron", link: "/" },
           { text: "微前端", link: "/minweb/微前端/微前端实现方案" },
           { text: "webpack", link: "/webpack/" },
           { text: "nodejs", link: "/nodejs/1认识nodejs" },
-          { text: "算法及数据结构", link: "/" },
-          { text: "设计模式", link: "/" },
+          // { text: "算法及数据结构", link: "/" },
+          // { text: "设计模式", link: "/" },
 
         ] 
       },
@@ -57,6 +57,7 @@ module.exports = {
       ...getSideBar("vue"),
       ...getSideBar("nodejs"),
       ...getSideBar("minweb"),
+      ...getSideBar("react"),
     },
     algolia: {
       appId: "CBJNVS1RP1",
