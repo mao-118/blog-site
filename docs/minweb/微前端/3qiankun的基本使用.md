@@ -1,109 +1,4 @@
-# 微前端
-
-## 什么是微前端
-
-微前端是指存在于浏览器中的微服务，其借鉴了微服务的架构理念，将微服务的概念扩展到了前端。
-
-如果对微服务的概念比较陌生的话，可以简单的理解为微前端就是将一个大型的前端应用拆分成多个模块，每个微前端模块可以由不同的团队进行管理，并可以自主选择框架，并且有自己的仓库，可以独立部署上线。
-
-一般呢，微前端多应用于企业中的中后台项目中，因为企业内部的中后台项目存活时间都比较长，动辄三五年或者更多，最后演变成一个巨石应用的概率往往高于其他类型的web应用。这就带来了**技术栈落后**、**编译部署慢**两个问题。
-
-<img src="/imgs/image-20221031143509501.png" alt="image-20221031143509501" style="zoom:33%;" />
-
-我们以常见的电商平台举例，某家已经存活了10年的电商平台的后台管理系统由几个模块构成，包括商品管理、库存管理、物流管理等模块，但是因为历史原因，这个项目一开始用jquery编写的，因为本着能跑就行的原则，这10年期间业务上一直没有太大改动所以就延续了下来，直到今天还是用的jquery维护的。
-
-有一天，刚入职的小明被叫到办公室，老板和他说我们公司要开展新的业务，要开展生鲜配送服务，并且答应他说这个业务做大后公司就可以上市，就升你为公司的CTO，小明听了十分开心，想着自己马上就可以升职加薪迎娶白富美了，于是马上就打开某聘开始找简历招人了，但是跟人聊的时候一说要用jquery去写一个大型的后台系统的时候，很多人都放弃了，还遭到了候选人的讽刺：“都2202年了怎么还有人用jquery”。小明这个时候才明白，大清已经亡了，jquery早就已经没人用了。想到这，小明陷入了沉思，自己升职加薪的梦难到要破灭了吗。。。
-
-这个时候，某聘上的一个候选人打来了电话，说他有一个好的方案可以不用jquery在原来的项目上堆积代码，而是将新的项目单独拿出来去写，并且实现独立部署，然后小明马上约了这个候选人当面聊聊。候选人到了公司跟小明聊了聊后，这时候小明才第一次听到微前端的这个概念，看着眼前的候选人，小明的眼眶都湿润了，于是当场就和他签了合同，给了每个月2千8的高薪，并且答应等业务做大以后就给他取个漂亮嫂子。听到这，候选人的眼眶也湿润了。。。
-
-好了，故事讲完了，那么接下来我们来看看，微前端到底是怎么实现小明想要的功能呢？
-
-- 之前的项目架构
-
-  <img src="/imgs/image-20221018154620652.png" alt="image-20221018154620652" style="zoom:50%;" />
-
-- 引入微前端后
-
-  <img src="/imgs/image-20221018154700205.png" alt="image-20221018154700205" style="zoom:50%;" />
-
-## 微前端的好处
-
-## 1. 团队自治
-
-在公司里面，一般团队都是按照业务去划分的，在没有微前端的时候，如果几个团队维护一个项目肯定会遇到一些冲突，比如合并代码的冲突，上线时间的冲突等。应用了微前端之后，就可以将项目根据业务模块拆分成几个小的模块，每个模块都由不同的团队去维护，单独开发，单独部署上线，这样团队直接就能实现自治，减少甚至不会出现和其他团队冲突的情况。
-
-## 2. 兼容老项目
-
-如果公司中有故事中存在的古老的jquery或者其他巨石项目的话，但是又不想用旧的技术栈去维护，选择使用微前端的方式去拆分项目是一个很好的选择。
-
-## 3. 跨技术栈
-
-根据我们上面的例子，如果我们的微前端系统中需要新增一个业务模块时，只需要单独的新建一个项目，至于项目采用什么技术栈，完全可以由团队自己去定义，即使和其他模块用的不同的技术栈也不会有任何的问题
-
-## 4. 总结
-
-<img src="/imgs/image-20221018154743999.png" alt="image-20221018154743999" style="zoom: 33%;" />
-
-## 现有的微前端方案
-
-## 1. iframe
-
-iframe大家都很熟悉，通过iframe实现的话就是每个子应用通过iframe标签来嵌入到父应用中，iframe具有天然的隔离属性，各个子应用之间以及子应用和父应用之间都可以做到互不影响。
-
-但是iframe也有很多缺点：
-
-1. url不同步，如果刷新页面，iframe中的页面的路由会丢失。
-2. 全局上下文完全隔离，内存变量不共享。
-3. UI不同步，比如iframe中的页面如果有带遮罩层的弹窗组件，则遮罩就不能覆盖整个浏览器，只能在iframe中生效。
-4. 慢。每次子应用进入都是一次浏览器上下文重建、资源重新加载的过程。
-
-## 2. single-spa
-
-官网：https://zh-hans.single-spa.js.org/docs/getting-started-overview
-
-single-spa是最早的微前端框架，可以兼容很多技术栈。
-
-single-spa首先在基座中注册所有子应用的路由，当URL改变时就会去进行匹配，匹配到哪个子应用就会去加载对应的那个子应用。
-
-相对于iframe的实现方案，single-spa中基座和各个子应用之间共享着一个全局上下文，并且不存在URL不同步和UI不同步的情况，但是single-spa也有以下的缺点：
-
-1. 没有实现js隔离和css隔离
-2. 需要修改大量的配置，包括基座和子应用的，不能开箱即用
-
-## 3. qiankun
-
-qiankun是阿里开源的一个微前端的框架，在阿里内部已经经过一批线上应用的充分检验及打磨了，所以可以放心使用。
-[官方文档](https://qiankun.umijs.org/zh)
-
-- 特点
-
-1. html entry 的方式引入子应用，相比 js entry 极大的降低了应用改造的成本；
-2. 完备的沙箱方案，js 沙箱做了 SnapshotSandbox、LegacySandbox、ProxySandbox 三套渐进增强方案，css 沙箱做了 
-3. strictStyleIsolation、experimentalStyleIsolation 两套适用不同场景的方案；
-4. 做了静态资源预加载能力；
-
-- 不足
-1. 适配成本比较高，工程化、生命周期、静态资源路径、路由等都要做一系列的适配工作；
-2. css 沙箱采用严格隔离会有各种问题，js 沙箱在某些场景下执行性能下降严重；
-3. 无法同时激活多个子应用，也不支持子应用保活；
-4. 无法支持 vite 等 esmodule 脚本运行；
-
-## 4. 无界微前端
-[官方文档](https://wujie-micro.github.io/doc/)
-[预览demo](https://wujie-micro.github.io/demo-main-vue/react16?react16=%2Fdemo-react16%2Fhome)
-
-- 特点
-    1. 接入简单只需要四五行代码
-    2. 不需要针对vite额外处理
-    3. 预加载
-    4. 应用保活机制
-- 不足
-    1. 隔离js使用一个空的iframe进行隔离
-    2. 子应用axios需要自行适配
-    3. iframe沙箱的src设置了主应用的host，初始化iframe的时候需要等待iframe的location.orign从'about:blank'初始化为主 应用的host，这个采用的计时器去等待的不是很优雅。
-    4. 底层原理 使用shadowDom 隔离css，js使用空的iframe隔离，通讯使用的是proxy
-
-## 基于qiankun的微前端实战
+# 基于qiankun的微前端实战
 首先创建好项目，目录如下：
 
 ```less
@@ -120,16 +15,16 @@ qiankun是阿里开源的一个微前端的框架，在阿里内部已经经过�
 
 基座用的是`create-react-app`脚手架加上`antd`组件库搭建的项目，也可以选择vue或者其他框架，一般来说，基座只提供加载子应用的容器，尽量不写复杂的业务逻辑。
 
-##### 基座改造
+## 基座改造
 
-1. 安装qiankun
+### 1. 安装qiankun
 
 ```bash
 // 安装qiankun
 npm i qiankun // 或者 yarn add qiankun
 ```
 
-2. 修改入口文件
+### 2. 修改入口文件
 
 ```javascript
 // 在src/index.tsx中增加如下代码
@@ -171,7 +66,7 @@ start() // 3. 启动微服务
 
 使用`create-react-app`脚手架创建，`webpack`进行配置，为了不eject所有的webpack配置，我们选择用`react-app-rewired`工具来改造webpack配置。
 
-1. 改造子应用的入口文件
+### 1. 改造子应用的入口文件
 
 ```javascript
 let root: Root
@@ -210,7 +105,7 @@ export async function unmount(props: any) {
 }
 ```
 
-2. 新增public-path.js
+### 2. 新增public-path.js
 
 ```js
 if (window.__POWERED_BY_QIANKUN__) {
@@ -220,7 +115,7 @@ if (window.__POWERED_BY_QIANKUN__) {
 }
 ```
 
-3. 修改webpack配置文件
+### 3. 修改webpack配置文件
 
 ```javascript
 // 在根目录下新增config-overrides.js文件并新增如下配置
@@ -238,22 +133,22 @@ module.exports = {
 
 ## 3. vue子应用
 
-##### 创建子应用
+## 创建子应用
 
 ```bash
 # 创建子应用，选择vue3+vite
 npm create vite@latest
 ```
 
-##### 改造子应用
+## 改造子应用
 
-1. 安装`vite-plugin-qiankun`依赖包
+### 1. 安装`vite-plugin-qiankun`依赖包
 
 ```bash
 npm i vite-plugin-qiankun # yarn add vite-plugin-qiankun
 ```
 
-2. 修改vite.config.js
+### 2. 修改vite.config.js
 
 ```javascript
 import qiankun from 'vite-plugin-qiankun';
@@ -274,7 +169,7 @@ defineConfig({
 })
 ```
 
-3. 修改main.ts
+### 3. 修改main.ts
 
 ```javascript
 import { createApp } from 'vue'
@@ -313,13 +208,13 @@ if (!qiankunWindow.__POWERED_BY_QIANKUN__) {
 
 我们使用最新的umi4去创建子应用，创建好后只需要简单的配置就可以跑起来
 
-1. 安装插件
+### 1. 安装插件
 
 ```bash
 npm i @umijs/plugins
 ```
 
-2. 配置.umirc.ts
+### 2. 配置.umirc.ts
 
 ```javascript
 export default {
@@ -350,13 +245,13 @@ export const qiankun = {
 };
 ```
 
-### 小结
+## 小结
 
 到这里，我们已经完成了应用的加载，已经覆盖了react和vue两大框架，并且选择了不同的脚手架还有打包工具，同理，angular和jquery的项目大家感兴趣可以自己尝试下。
 
 ## 5. 补充
 
-##### 样式隔离
+## 样式隔离
 
 qiankun实现了各个子应用之间的样式隔离，但是基座和子应用之间的样式隔离没有实现，所以基座和子应用之前的样式还会有冲突和覆盖的情况。
 
@@ -365,7 +260,7 @@ qiankun实现了各个子应用之间的样式隔离，但是基座和子应用�
 - 每个应用的样式使用固定的格式
 -  通过`css-module`的方式给每个应用自动加上前缀
 
-##### 子应用间的跳转
+## 子应用间的跳转
 
 - 主应用和微应用都是 `hash` 模式，主应用根据 `hash` 来判断微应用，则不用考虑这个问题。
 - `history`模式下微应用之间的跳转，或者微应用跳主应用页面，直接使用微应用的路由实例是不行的，原因是微应用的路由实例跳转都基于路由的 `base`。有两种办法可以跳转：
@@ -401,7 +296,7 @@ const bindHistory = () => {
 window.addEventListener('pushState', bindHistory)
 ```
 
-##### 公共依赖加载
+## 公共依赖加载
 
 场景：如果主应用和子应用都使用了相同的库或者包(antd, axios等)，就可以用`externals`的方式来引入，减少加载重复包导致资源浪费，就是一个项目使用后另一个项目不必再重复加载。
 
@@ -429,7 +324,7 @@ module.exports = override(
 <script ignore="true" src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 ```
 
-##### 全局状态管理
+## 全局状态管理
 
 一般来说，各个子应用是通过业务来划分的，不同业务线应该降低耦合度，尽量去避免通信，但是如果涉及到一些公共的状态或者操作，qiankun也是支持的。
 
@@ -465,45 +360,4 @@ export function mount(props) {
 通过以上步骤可以看的出来使用qinakun微前端适配成本还是比较高的，
 而且工程化、生命周期、静态资源路径、路由等都要做一系列的适配工作，
 所以还是推荐使用无界微前端
-:::
-## 基于无界的微前端方案(好用推荐)
-## 1. 安装
-我们使用Vue3来充当主应用 首先需要安装依赖
-```ts
-//vue2
-vue2 npm i wujie-vue2 -S
-//vue3 
-vue3 npm i wujie-vue3 -S
-//react
-react npm i wujie-react -S
-```
-## 2. 改造主应用main.ts
-```ts
-import { createApp } from 'vue'
-import App from './App.vue'
-import Wujie from 'wujie-vue3'
-createApp(App).use(Wujie).mount('#app')
-```
-## 3. 主应用页面内引入子应用
-```vue
-<template>
-  <div>
-    <WujieVue width="100%" height="100%" name="react" :url="url" ></WujieVue>
-  </div>
-</template>
- 
-<script setup lang='ts'>
-import { ref, reactive } from 'vue'
-const url = 'http://127.0.0.1:5174/'
-</script>
- 
-<style scoped lang='less'></style>
-```
-
-::: tip
-
-只需要简单的几行代码就可以实现微前端应用，接入成本很低。
-这些都是无界作者给咱们进行封装过的，所以开箱即用，
-如果你想知道如何封装的，可以查看[官方文档](https://wujie-micro.github.io/doc/guide/)
-
 :::

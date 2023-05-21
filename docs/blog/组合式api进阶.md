@@ -1,6 +1,6 @@
-# Composition API(其它部分)
+# Composition API进阶
 
-## 1) shallowReactive 与 shallowRef
+## shallowReactive 与 shallowRef
 
 - shallowReactive : 只处理了对象内最外层属性的响应式(也就是浅响应式)
 - shallowRef: 只处理了value的响应式, 不进行对象的reactive处理
@@ -69,7 +69,7 @@ export default {
 
 
 
-## 2) readonly 与 shallowReadonly
+## readonly 与 shallowReadonly
 
 - readonly: 
   - 深度只读数据
@@ -132,10 +132,7 @@ export default {
 ```
 
 
-
-
-
-## 3) toRaw 与 markRaw
+## toRaw 与 markRaw
 
 - toRaw
   - 返回由 `reactive` 或 `readonly` 方法转换成响应式代理的普通对象。
@@ -195,7 +192,7 @@ export default {
 
 
 
-## 4) toRef
+## toRef
 
 - 为源响应式对象上的某个属性创建一个 ref对象, 二者内部操作的是同一个数据值, 更新时二者是同步的
 - 区别ref: 拷贝了一份新的数据值单独操作, 更新时相互不影响
@@ -302,7 +299,7 @@ export default component
 
 
 
-## 5) customRef
+## customRef
 
 - 创建一个自定义的 ref，并对其依赖项跟踪和更新触发进行显式控制
 - 需求: 使用 customRef 实现 debounce 的示例
@@ -366,10 +363,7 @@ function useDebouncedRef<T>(value: T, delay = 200) {
 </script>
 ```
 
-
-
-
-## 6) provide 与 inject
+## provide 与 inject
 
 - provide` 和 `inject` 提供依赖注入，功能类似 2.x 的 `provide/inject
 
@@ -453,9 +447,7 @@ export default {
 </script>
 ```
 
-
-
-## 7) 响应式数据的判断
+## 响应式数据的判断
 
 - isRef: 检查一个值是否为一个 ref 对象
 - isReactive: 检查一个对象是否是由 `reactive` 创建的响应式代理

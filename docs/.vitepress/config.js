@@ -38,7 +38,7 @@ module.exports = {
           // { text: "uniapp", link: "/" },
           // { text: "微信小程序", link: "/" },
           // { text: "electron", link: "/" },
-          { text: "微前端", link: "/minweb/微前端/微前端实现方案" },
+          { text: "微前端", link: "/minweb/微前端/1微前端的概念" },
           { text: "webpack", link: "/webpack/" },
           { text: "nodejs", link: "/nodejs/1认识nodejs" },
           // { text: "算法及数据结构", link: "/" },

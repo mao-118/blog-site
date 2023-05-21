@@ -4,12 +4,12 @@
 
 ​	https://composition-api.vuejs.org/zh/api.html
 
-## 1) setup
+## setup
 
 - 新的option, 所有的组合API函数都在此使用, 只在初始化时执行一次
 - 函数如果返回对象, 对象中的属性或方法, 模板中可以直接使用
 
-## 2) ref
+## ref
 
 - 作用: 定义一个数据的响应式
 - 语法: const xxx = ref(initValue): 
@@ -67,7 +67,7 @@ export default {
 </script>
 ```
 
-## 3) reactive
+## reactive
 
 - 作用: 定义多个数据的响应式
 - const proxy = reactive(obj): 接收一个普通对象然后返回该普通对象的响应式代理器对象
@@ -125,9 +125,7 @@ export default {
 </script>
 ```
 
-
-
-## 4) 比较Vue2与Vue3的响应式(重要)
+## 比较Vue2与Vue3的响应式(重要)
 
 ## vue2的响应式
 
@@ -233,7 +231,7 @@ proxy.name = 'tom'
 
 
 
-## 5) setup细节
+## setup细节
 
 - setup执行的时机
   - 在beforeCreate之前执行(一次), 此时组件对象还没有创建
@@ -373,7 +371,7 @@ export default defineComponent({
 
 
 
-## 6) reactive与ref-细节
+## reactive与ref-细节
 
 -  是Vue3的 composition API中2个最重要的响应式API
 -  ref用来处理基本类型数据, reactive用来处理对象(递归深度响应式)
@@ -430,10 +428,7 @@ export default {
 
 ```
 
-
-
-
-## 7) 计算属性与监视
+## 计算属性与监视
 
 - computed函数: 
   - 与computed配置功能一致
@@ -522,12 +517,12 @@ export default {
     /* 
     watchEffect: 监视所有回调中使用的数据
     */
-    /* 
+    
     watchEffect(() => {
       console.log('watchEffect')
       fullName3.value = user.firstName + '-' + user.lastName
     }) 
-    */
+    
 
     /* 
     使用watch的2个特性:
@@ -576,15 +571,15 @@ export default {
 
 
 
-## 8) 生命周期
+## 生命周期
 
 **vue2.x的生命周期**
 
-![lifecycle_2](https://vipkshttps3.wiz.cn/ks/note/view/49c30824-dcdf-4bd0-af2a-708f490b44a1/10311b3b-496c-41f1-8df3-c87572008080/index_files/1604629129730-y1h.png)
+![lifecycle_2](./images/38a1d57b40d6453b985be1b090b4173e.png)
 
 **vue3的生命周期**
 
-![lifecycle_3](https://vipkshttps3.wiz.cn/ks/note/view/49c30824-dcdf-4bd0-af2a-708f490b44a1/10311b3b-496c-41f1-8df3-c87572008080/index_files/1604629129585-tqn.png)
+![lifecycle_3](./images/40d6a17746d24762b4001905b6a54852.png)
 
 **与 2.x 版本生命周期相对应的组合式 API**
 
@@ -729,7 +724,7 @@ export default {
 
 
 
-## 09) 自定义hook函数
+## 自定义hook函数
 
 
 
@@ -914,7 +909,7 @@ export default {
 
 
 
-## 10) toRefs
+## toRefs
 
  把一个响应式对象转换成普通对象，该普通对象的每个 property 都是一个 ref 
 
@@ -990,7 +985,7 @@ function useReatureX() {
 
 
 
-## 11) ref获取元素
+## ref获取元素
 
 利用ref函数获取组件中的标签元素
 
