@@ -14,7 +14,7 @@ import { getSideBar } from "../utils";
 // https://vitepress.vuejs.org/guide/what-is-vitepress.html
 module.exports = {
   title: "Mao Lihang's blog",
-  description: "vue&js&node&html&css",
+  description: "vue,js,node,html,css,react,前端,微前端,webpack,vite,vue3",
   base: "/blog-site/",
   head: [
     ["link", { rel: "icon", href: "/blog-site/logo.gif", crossorigin: "" }],
@@ -25,7 +25,7 @@ module.exports = {
     outlineTitle: "当前页面",
     socialLinks: [{ icon: "github", link: "https://github.com/mao-118" }],
     nav: [
-      { text: "blog", link: "/blog/开箱即用的后台模板" },
+      { text: "blog", link: "/blog/看一遍就会的setup语法糖" },
       {
         text:'大前端修炼',
         // 斗者，斗师，大斗师，斗灵，斗王，斗皇，斗宗，斗尊，斗圣，斗帝

@@ -10,7 +10,7 @@ hero:
   actions:
     - theme: brand
       text: 立即前往 →
-      link: /blog/开箱即用的后台模板
+      link: /blog/看一遍就会的setup语法糖
 features:
   - icon: 💪
     title: 循循渐进
