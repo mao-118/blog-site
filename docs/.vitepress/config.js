@@ -17,11 +17,11 @@ module.exports = {
   description: "vue,js,node,html,css,react,前端,微前端,webpack,vite,vue3",
   base: "/blog-site/",
   head: [
-    ["link", { rel: "icon", href: "/blog-site/logo.gif", crossorigin: "" }],
+    ["link", { rel: "icon", href: "/blog-site/avtt.svg", crossorigin: "" }],
     ["meta", { name: "referrer", content: "never" }],
   ],
   themeConfig: {
-    logo: '/logo.gif',
+    logo: '/avtt.svg',
     outlineTitle: "当前页面",
     socialLinks: [{ icon: "github", link: "https://github.com/mao-118" }],
     nav: [
