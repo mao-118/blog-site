@@ -1,11 +1,7 @@
 # React是什么
 一个专注于构建用户界面的 JavaScript 库，和vue和angular并称前端三大框架，不夸张的说，react引领了很多新思想，世界范围内是最流行的js前端框架，最新版本已经到了18，加入了许多很棒的新特性。
 
-React英文文档（https://reactjs.org/）
-
-React中文文档 （https://zh-hans.reactjs.org/）
-
-React新文档（https://beta.reactjs.org/）（开发中....）
+[React官方文档](https://zh-hans.react.dev/)
 
 ## React的特点
 1. 声明式UI（JSX）
