@@ -41,7 +41,7 @@ module.exports = {
           { text: "微前端", link: "/minweb/微前端/1微前端的概念" },
           { text: "webpack", link: "/webpack/1基础/1前言" },
           { text: "nodejs", link: "/nodejs/1认识nodejs" },
-          { text: "版本管理", link: "/version-manage/1svn/1svn安装及配置" },
+          { text: "版本管理", link: "/version-manage/1git/1git常用命令" },
 
           // { text: "算法及数据结构", link: "/" },
           // { text: "设计模式", link: "/" },
