@@ -1,3 +1,7 @@
+---
+outline: "deep"
+---
+
 # axios 的使用及封装
 
 ## axios 是什么？
@@ -12,7 +16,7 @@ npm i axios
 
 ## 使用
 
-## 1. get
+### 1. get
 
 ```js
 import axios from "axios";
@@ -59,7 +63,7 @@ async function getUser() {
 }
 ```
 
-## 2. post
+### 2. post
 
 ```js
 import axios from "axios";

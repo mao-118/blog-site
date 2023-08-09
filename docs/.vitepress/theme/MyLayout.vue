@@ -21,6 +21,7 @@ const { Layout } = DefaultTheme;
   width: 100px;
   text-align: center;
   font-size: 12px;
+  margin-top: 10px;
 }
 #ad img {
   width: 100px;

@@ -16,5 +16,8 @@
     "@docsearch/css": "^3.2.0",
     "@docsearch/js": "^3.2.0",
     "vitepress": "^1.0.0-alpha.4"
+  },
+  "devDependencies": {
+    "sass": "^1.64.2"
   }
 }
