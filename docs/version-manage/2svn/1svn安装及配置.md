@@ -17,17 +17,17 @@ outline: "deep"
 
 属于 C/S 结构软件（客户端与服务器端）
 
-服务端软件：[VisualSVN](./static/VisualSVN-Server-2.7.7.msi)
+服务端软件：[VisualSVN](https://gitee.com/mao-118/utools-filebed/raw/master/svn/VisualSVN-Server-2.7.7.msi)
 
 客户端软件：TortoiseSVN
 
-[win64](./static/TortoiseSVN-1.8.10.26129-x64-svn-1.8.11.msi)
+[win64](https://gitee.com/mao-118/utools-filebed/raw/master/svn/TortoiseSVN-1.8.10.26129-x64-svn-1.8.11.msi)
 
-[win64 中文包](./static/LanguagePack_1.8.10.26129-x64-zh_CN.msi)
+[win64 中文包](https://gitee.com/mao-118/utools-filebed/raw/master/svn/LanguagePack_1.8.10.26129-x64-zh_CN.msi)
 
-[win32](./static/TortoiseSVN-1.8.10.26129-win32-svn-1.8.11.msi)
+[win32](https://gitee.com/mao-118/utools-filebed/raw/master/svn/TortoiseSVN-1.8.10.26129-win32-svn-1.8.11.msi)
 
-[win32 中文包](./static/LanguagePack_1.8.10.26129-win32-zh_CN.msi)
+[win32 中文包](https://gitee.com/mao-118/utools-filebed/raw/master/svn/LanguagePack_1.8.10.26129-win32-zh_CN.msi)
 
 点击下一步直至安装结束即可。
 
