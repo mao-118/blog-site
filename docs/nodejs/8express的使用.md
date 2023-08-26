@@ -1,3 +1,7 @@
+---
+outline: "deep"
+---
+
 # node 开发
 
 使用 express 进行 node 开发
@@ -40,10 +44,13 @@ const cors = require("cors");
 // 将 cors 注册为全局中间件
 app.use(cors());
 ```
-## 配置解析application/json格式数据的内置中间件
+
+## 配置解析 application/json 格式数据的内置中间件
+
 ```js
-app.use(express.json())
+app.use(express.json());
 ```
+
 ## 配置解析表单数据的中间件
 
 - 通过如下的代码，配置解析 `application/x-www-form-urlencoded` 格式的表单数据的中间件：
@@ -51,7 +58,9 @@ app.use(express.json())
 ```js
 app.use(express.urlencoded({ extended: false }));
 ```
+
 ## 使用 nodemon
+
 当基于 Node.js 编写了一个网站应用的时候，传统的方式，是运行 node app.js 命令，来启动项目。
 
 这样做的坏处是：代码被修改之后，需要手动重启项目。
@@ -59,6 +68,7 @@ app.use(express.urlencoded({ extended: false }));
 现在，我们可以将 node 命令替换为 nodemon 命令，使用 nodemon app.js 来启动项目。
 
 这样做的好处是：代码被修改之后，会被 nodemon 监听到，从而实现自动重启项目的效果。
+
 ```js
 // 安装
 npm install nodemon -g
@@ -96,97 +106,140 @@ const userRouter = require("./router/user");
 // 使用路由并设置路由前缀 /api
 app.use("/api", userRouter);
 ```
+
+:::tip
+路由获取请求参数：
+
+`/api/userinfo/:id => req.params` 获取
+
+`/api/userinfo?id=1 => req.query` 获取
+
+`json或者表单 => req.body` 获取（需要不同的中间件解析）
+
+:::
+
 ## 中间件
+
 Express 的中间件，本质上就是一个 function 处理函数
+
 1. 定义一个中间件
+
 ```js
 // 中间件的三个参数
-const mw = function(req,res,next){
-  console.log('这是一个中间件')
+const mw = function (req, res, next) {
+  console.log("这是一个中间件");
   //处理业务之后，必须调用next函数，流向下一步
-  next()
-}
+  next();
+};
 ```
+
 2. 使用中间件
+
 ```js
 //全局生效 客户端发起的任何请求，到达服务器之后，都会触发该中间件
-app.use(mw)
+app.use(mw);
 // 局部生效
-app.get('/',mw,function(req,res){
-  res.send('hello')
-})
+app.get("/", mw, function (req, res) {
+  res.send("hello");
+});
 //中间件可以有多个
-app.get('/',[mw,mw1],function(req,res){
-  res.send('hello')
-})
+app.get("/", [mw, mw1], function (req, res) {
+  res.send("hello");
+});
 ```
-3. 了解中间件的5个使用注意事项
+
+3. 了解中间件的 5 个使用注意事项
+
 - 一定要在路由之前注册中间件
 - 客户端发送过来的请求，可以连续调用多个中间件进行处理
 - 执行完中间件的业务代码之后，不要忘记调用 next() 函数
 - 为了防止代码逻辑混乱，调用 next() 函数后不要再写额外的代码
 - 连续调用多个中间件时，多个中间件之间，共享 req 和 res 对象
+
 ## 中间件的分类
+
 为了方便大家理解和记忆中间件的使用，Express 官方把常见的中间件用法，分成了 5 大类，分别是：
+
 - 应用级别的中间件
 - 路由级别的中间件
 - 错误级别的中间件
 - Express 内置的中间件
 - 第三方的中间件
+
 ### 1. 应用级别的中间件
+
 通过 app.use() 或 app.get() 或 app.post() ，绑定到 app 实例上的中间件，叫做应用级别的中间件，代码示例如下：
+
 ```js
-app.use((req,res,next)=>{
-  next()
-})
-app.get('/',mw,(req,res)=>{
-  res.send('hello')
-})
+app.use((req, res, next) => {
+  next();
+});
+app.get("/", mw, (req, res) => {
+  res.send("hello");
+});
 ```
+
 ### 2. 路由级别的中间件
+
 绑定到 express.Router() 实例上的中间件，叫做路由级别的中间件。它的用法和应用级别中间件没有任何区别。只不过，应用级别中间件是绑定到 app 实例上，路由级别中间件绑定到 router 实例上，代码示例如下：
+
 ```js
-var app = express()
-var router = express.Router()
+var app = express();
+var router = express.Router();
 // 路由级别中间件
-router.use((req,res,next)=>{
-  next()
-})
-app.use('/',router)
+router.use((req, res, next) => {
+  next();
+});
+app.use("/", router);
 ```
+
 ### 3. 错误级别的中间件
+
 错误级别中间件的作用：专门用来捕获整个项目中发生的异常错误，从而防止项目异常崩溃的问题。
 
 格式：错误级别中间件的 function 处理函数中，必须有 4 个形参，形参顺序从前到后，分别是 (err, req, res, next)。
+
 ```js
-app.get('/',(req,res)=>{
-  throw new Error('服务器发生了错误')
-  res.send('hello')
-})
-app.use((err,req,res,next)=>{
+app.get("/", (req, res) => {
+  throw new Error("服务器发生了错误");
+  res.send("hello");
+});
+app.use((err, req, res, next) => {
   //发生错误时触发
-  res.send('Error!'+err.message)
-})
+  res.send("Error!" + err.message);
+});
 ```
-:::warning
-错误级别的中间件，
-必须注册在所有路由之后！
-:::
+
 ### 4. Express 内置的中间件
+
 自 Express 4.16.0 版本开始，Express 内置了 3 个常用的中间件，极大的提高了 Express 项目的开发效率和体验：
+
 - express.static 快速托管静态资源的内置中间件，例如： HTML 文件、图片、CSS 样式等（无兼容性）
 - express.json 解析 JSON 格式的请求体数据（有兼容性，仅在 4.16.0+ 版本中可用）
 - express.urlencoded 解析 URL-encoded 格式的请求体数据（有兼容性，仅在 4.16.0+ 版本中可用）
+
 ### 5. 第三方的中间件
+
 非 Express 官方内置的，而是由第三方开发出来的中间件，叫做第三方中间件。在项目中，大家可以按需下载并配置第三方中间件，从而提高项目的开发效率。
 
 例如：在 express@4.16.0 之前的版本中，经常使用 body-parser 这个第三方中间件，来解析请求体数据。使用步骤如下：
+
 - 运行 npm install body-parser 安装中间件
 - 使用 require 导入中间件
 - 调用 app.use() 注册并使用中间件
+  :::warning
+  Express 内置的 express.urlencoded 中间件，就是基于 body-parser 这个第三方中间件进一步封装出来的。
+  :::
+
+### 6. 中间件注意事项
+
 :::warning
-Express 内置的 express.urlencoded 中间件，就是基于 body-parser 这个第三方中间件进一步封装出来的。
+错误级别的中间件，必须注册在所有路由之后！
+
+其他中间件注册在所有路由之前。
+
 :::
+
 ## mysql 的使用
 
 1. 安装
@@ -240,6 +293,21 @@ router.get("/getUsername", (req, res) => {
 });
 ```
 
+:::tip
+查询语句 `results` 等于查询到的结果集合
+
+增删改语句 `results` 中包含 `affectedRows` 字段，代表影响行数
+
+```js
+if (results.affectedRows !== 1)
+  return res.send({
+    status: 1,
+    message: "影响行数不唯一，失败！",
+  });
+```
+
+:::
+
 ## bcryptjs 加密
 
 1. 安装
@@ -262,10 +330,10 @@ userinfo.password = bcrypt.hashSync(userinfo.password, 10);
 - 单纯的使用 if...else... 的形式对数据合法性进行验证，效率低下、出错率高、维护性差。
 - 因此，推荐使用第三方数据验证模块，来降低出错率、提高验证的效率与可维护性，让后端程序员把更多的精力放在核心业务逻辑的处理上。
 
-1. 安装 @hapi/joi 包，为表单中携带的每个数据项，定义验证规则：
+1. 安装 joi 包，为表单中携带的每个数据项，定义验证规则：
 
 ```
-npm install @hapi/joi@17.1.0
+npm install joi
 ```
 
 2. 安装 @escook/express-joi 中间件，来实现自动对表单数据进行验证的功能：
@@ -277,7 +345,7 @@ npm i @escook/express-joi
 3. 新建 /schema/user.js 用户信息验证规则模块，并初始化代码如下：
 
 ```js
-const joi = require("@hapi/joi");
+const joi = require("joi");
 /**
  * string() 值必须是字符串 * alphanum() 值只能是包含 a-zA-Z0-9 的字符串
  * min(length) 最小长度
@@ -324,7 +392,7 @@ router.post('/login', userHandler.login) module.exports = router
 5. 在 app.js 的全局错误级别中间件中，捕获验证失败的错误，并把验证失败的结果响应给客户端：
 
 ```js
-const joi = require("@hapi/joi");
+const joi = require("joi");
 // 错误中间件
 app.use(function (err, req, res, next) {
   // 数据验证失败
@@ -337,7 +405,11 @@ app.use(function (err, req, res, next) {
 
 ## 生成 JWT 的 Token 字符串
 
-- 核心注意点：在生成 Token 字符串的时候，一定要剔除 密码 和 头像 的值
+:::warning
+
+- 核心注意点：在生成 Token 字符串的时候，一定要剔除敏感字段，如 密码 和 头像 的值
+
+:::
 
 1. 安装
 
@@ -377,12 +449,14 @@ npm i express-jwt@5.3.3
 2. 使用
 
 ```js
-// 导入配置文件
-const config = require("./config");
 // 解析 token 的中间件
 const expressJWT = require("express-jwt");
 const jwtSecretKey: 'itNo1. ^_^'
-// 使用 .unless({ path: [/^\/api\//] }) 指定哪些接口不需要进行 Token 的身份认证
+/**
+ *  使用 .unless({ path: [/^\/api\//] }) 指定哪些接口不需要进行 Token 的身份认证
+ *  token 解析失败会进入到错误中间件
+ *  token 解析成功会在请求路由req对象里面挂载一个user对象，里面包含了用户生成token的对应字段
+*/
 app.use(
   expressJWT({ secret: jwtSecretKey }).unless({ path: [/^\/api\//] })
 );
