@@ -46,15 +46,26 @@ git stash pop
 git stash pop 1
 ```
 
+## git stash apply
+
+弹出最新 `stash` 的内容，和`pop`不同的是它不会删除该 `stash`
+
+```bash
+# 取出最新的一条
+git stash apply
+# 也可以根据编号来弹出
+git stash apply 1
+```
+
 ## git stash show
 
 显示当前最新 `stash` 的改动，主要是恢复 `stash` 前可以看到修改内容，如果忘了 `stash` 了什么内容可以使用
 
 ```bash
 # 查看最新的一条改动
-git stash show
+git stash show -p
 # 查看指定的某条改动
-git stash show 1
+git stash show 1 -p
 ```
 
 ## git stash drop
@@ -79,5 +90,7 @@ git stash clear
 ## 友情提示
 
 :::tip
-使用 `git stash` 必须先进行 `git add` 操作
-:::
+
+- 使用 `git stash` 必须先进行 `git add` 操作
+- 如果使用`git stash`有冲突, `git stash pop` 之后的那条记录还是会存在
+  :::
