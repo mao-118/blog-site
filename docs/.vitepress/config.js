@@ -36,7 +36,7 @@ module.exports = {
           // { text: "设计模式", link: "/" },
         ],
       },
-      // { text: '案例精选', link: '/blog/' },
+      { text: "案例精选", link: "/demo/1高德地图的使用" },
       { text: "项目预览", link: "https://admin.spicyboy.cn/" },
     ],
     sidebar: {
@@ -51,6 +51,7 @@ module.exports = {
       ...getSideBar("react"),
       ...getSideBar("uniapp"),
       ...getSideBar("mp-weixin"),
+      ...getSideBar("demo"),
     },
     algolia: {
       appId: "CBJNVS1RP1",
