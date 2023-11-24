@@ -33,7 +33,7 @@ module.exports = {
           { text: "版本管理", link: "/version-manage/1git/1git常用命令" },
 
           // { text: "算法及数据结构", link: "/" },
-          // { text: "设计模式", link: "/" },
+          { text: "设计模式", link: "/设计模式/1观察者模式" },
         ],
       },
       // { text: "案例精选", link: "/demo/1高德地图的使用" },
@@ -51,7 +51,7 @@ module.exports = {
       ...getSideBar("react"),
       ...getSideBar("uniapp"),
       ...getSideBar("mp-weixin"),
-      // ...getSideBar("demo"),
+      ...getSideBar("设计模式"),
     },
     algolia: {
       appId: "CBJNVS1RP1",
