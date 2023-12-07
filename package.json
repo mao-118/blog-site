@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs:dev": "vitepress dev docs --host",
     "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs"
+    "docs:serve": "vitepress serve docs",
+    "documate:upload": "documate upload"
   },
   "keywords": [],
   "author": "",
@@ -15,9 +16,11 @@
   "dependencies": {
     "@docsearch/css": "^3.2.0",
     "@docsearch/js": "^3.2.0",
+    "@documate/vue": "^0.3.1",
     "vitepress": "^1.0.0-alpha.4"
   },
   "devDependencies": {
+    "@documate/documate": "^0.2.1",
     "sass": "^1.64.2"
   }
 }

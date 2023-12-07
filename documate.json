@@ -1,0 +1,8 @@
+{
+  "root": ".",
+  "include": [
+    "**/*.md",
+    "**/*.mdx"
+  ],
+  "backend": "https://gb1z7b5v9h.us.aircode.run/upload"
+}

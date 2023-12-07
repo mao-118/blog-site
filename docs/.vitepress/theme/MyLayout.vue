@@ -1,5 +1,6 @@
 <script setup>
 import DefaultTheme from "vitepress/theme";
+import Documate from "@documate/vue";
 
 const { Layout } = DefaultTheme;
 </script>
@@ -13,6 +14,14 @@ const { Layout } = DefaultTheme;
           加我为好友!
         </a>
       </div>
+    </template>
+    <!-- 需要openAI key -->
+    <template #aside-top>
+      <Documate
+        buttonLabel="求助AI"
+        placeholder="开发中,敬请期待..."
+        endpoint="https://gb1z7b5v9h.us.aircode.run/ask"
+      />
     </template>
   </Layout>
 </template>
