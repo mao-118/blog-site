@@ -1,0 +1,1 @@
+import{_ as s,o as a,c as n,d as l}from"./app.0038e0a6.js";const b=JSON.parse('{"title":"Babel","description":"","frontmatter":{},"headers":[],"relativePath":"typescript/3\u9AD8\u7EA7/3Babel.md"}'),p={name:"typescript/3\u9AD8\u7EA7/3Babel.md"},o=l("",2),e=[o];function t(c,r,F,D,y,i){return a(),n("div",null,e)}var d=s(p,[["render",t]]);export{b as __pageData,d as default};
