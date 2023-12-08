@@ -1,7 +1,8 @@
 <script setup>
 import DefaultTheme from "vitepress/theme";
 import Documate from "@documate/vue";
-
+import "@documate/vue/dist/style.css";
+import "./index.css";
 const { Layout } = DefaultTheme;
 </script>
 

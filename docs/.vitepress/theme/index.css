@@ -1,3 +1,13 @@
+:root {
+    --vp-home-hero-name-color: transparent;
+    --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe, #41d1ff);
+    --vp-c-brand: #646cff;
+    --vp-c-text-dark-1: rgba(255, 255, 255, .87);
+    --vp-c-brand-light: #747bff;
+    --vp-c-brand-light: #747bff;
+    --vp-c-brand-dark:#747bff;
+    --vp-c-brand-lighter:#747bff;
+  }
 .VPImage.logo{
     animation:move 2.5s linear infinite;
 }
