@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,ac as i}from"./chunks/framework.DfhY12bu.js";const m=JSON.parse('{"title":"nvm的使用","description":"","frontmatter":{},"headers":[],"relativePath":"blog/nvm的使用.md","filePath":"blog/nvm的使用.md"}'),l={name:"blog/nvm的使用.md"},p=i("",12),e=[p];function t(h,k,c,d,r,o){return n(),a("div",null,e)}const E=s(l,[["render",t]]);export{m as __pageData,E as default};
