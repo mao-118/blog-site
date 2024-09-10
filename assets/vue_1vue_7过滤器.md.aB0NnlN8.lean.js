@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,ac as n}from"./chunks/framework.DfhY12bu.js";const c=JSON.parse('{"title":"过滤器","description":"","frontmatter":{},"headers":[],"relativePath":"vue/1vue/7过滤器.md","filePath":"vue/1vue/7过滤器.md"}'),l={name:"vue/1vue/7过滤器.md"},h=n("",5),k=[h];function p(t,E,e,r,d,g){return a(),i("div",null,k)}const F=s(l,[["render",p]]);export{c as __pageData,F as default};

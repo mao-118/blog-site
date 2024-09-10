@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,ac as h}from"./chunks/framework.DfhY12bu.js";const F=JSON.parse('{"title":"js 简写技巧","description":"","frontmatter":{},"headers":[],"relativePath":"blog/js简写技巧.md","filePath":"blog/js简写技巧.md"}'),n={name:"blog/js简写技巧.md"},k=h("",77),l=[k];function p(t,e,E,d,r,g){return a(),i("div",null,l)}const o=s(n,[["render",p]]);export{F as __pageData,o as default};
