@@ -50,9 +50,9 @@ svnadmin create Shop 文件夹路径（Shop 仓库）
 
 ### 二、启动服务端
 
-Apachehttp://localhost 或(ip 地址)访问到 htdocs 目录下的相关文件（监管）
+Apache http://localhost/文件路径 或(ip 地址)访问到 htdocs 目录下的相关文件（监管）
 
-SVNsvn://localhost 或(ip 地址)访问到相关数据仓库（如 Shop 仓库）
+SVN svn://localhost/文件路径 或(ip 地址)访问到相关数据仓库（如 Shop 仓库）
 
 基本语法：
 svnserve -d（后台运行） -r（监管目录） 版本仓库目录
@@ -70,25 +70,30 @@ svnserve -d（后台运行） -r（监管目录） 版本仓库目录
 
 #### 账号权限控制
 
-1. 关闭匿名用户权限控制
+1. 关闭匿名用户权限控制 `svnserve.conf`文件
    ![](./static/images/22.png)
-2. 开启 authz 授权文件和 passwd 认证文件
+2. 开启 `authz`文件和`passwd`文件
    ![](./static/images/23.png)
-3. 编写认证文件定义相关用户名与密码
+3. 编写`passwd`文件相关用户名与密码
    ![](./static/images/24.png)
-4. 编写授权文件
-   ![](./static/images/25.png)
-   ![](./static/images/26.png)
-   :::tip
-   组中如有多个用户用逗号分开，如：admin = admin,root
+4. 编写`authz`授权文件
 
-r：可读
+   - 设置 groups 组
+     ![](./static/images/25.png)
+   - 给 groups 设置权限
+     ![](./static/images/26.png)
+     :::tip
+     组中如有多个用户用逗号分开，如：admin = admin,root
 
-w：可写
+     r：可读
 
-\*：其他所有用户
-::: 5. 配置成功后重新拉取或提交文件需要用户登录
-![](./static/images/27.png)
+     w：可写
+
+     \*：其他所有用户
+     :::
+
+5. 配置成功后重新拉取或提交文件需要用户登录
+   ![](./static/images/27.png)
 
 ## svn 客户端软件连接 SVN 服务器
 
