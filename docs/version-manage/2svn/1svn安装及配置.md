@@ -50,16 +50,21 @@ svnadmin create Shop 文件夹路径（Shop 仓库）
 
 ### 二、启动服务端
 
-Apache http://localhost/文件路径 或(ip 地址)访问到 htdocs 目录下的相关文件（监管）
-
-SVN svn://localhost/文件路径 或(ip 地址)访问到相关数据仓库（如 Shop 仓库）
-
 基本语法：
 svnserve -d（后台运行） -r（监管目录） 版本仓库目录
 ![](./static/images/4.png)
-通过以上指令，我们的 svn://localhost 或 ip 地址就可以直接指向 Shop 版本仓库
+通过以上指令，我们的 `svn://localhost` 或 ip 地址就可以直接指向 Shop 版本仓库
 
-### 三、权限控制
+### 三、客户端连接
+
+Apache `http://localhost` 或(ip 地址)访问到 htdocs 目录下的相关文件（监管）
+
+SVN `svn://localhost` 或(ip 地址)访问到相关数据仓库（如 Shop 仓库）
+
+- 如果有多个项目的话，`svnserve`可以启动项目的父目录，客户端连接的时候只需要带上项目的文件路径即可
+- 如`http://localhost/Shop`
+
+### 四、权限控制
 
 #### 匿名用户权限控制
 
