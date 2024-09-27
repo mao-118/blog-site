@@ -74,7 +74,7 @@ nrm use npm
 :::
 
 ```ts
-npm adduser
+npm login
 // 根据提示输入用户名密码邮箱
 ```
 
