@@ -21,6 +21,15 @@ git reset .
 
 场景：当我们执行了`git commit`之后想要撤销
 
+### mixed
+
+`--mixed`是`git reset`的默认值
+
+```bash
+# 撤销到指定的commit，会将当前git add提交状态的文件恢复到未提交之前的状态，保留修改的文件内容
+git reset [commit_id]
+```
+
 ### soft
 
 撤销到指定`commit`并保留之前的更改
@@ -28,15 +37,8 @@ git reset .
 ```bash
 # 查看 commit 记录
 git log
-# 撤销到指定的commit，并且保留之前提交的更改
+# 撤销到指定的commit，和mixed不同的是，不会改变暂存区的内容，保留修改的文件内容
 git reset --soft [commit_id]
-```
-
-### soft 可以省略
-
-```bash
-# git reset [commit_id] 等同于 git reset --soft [commit_id]
-git reset [commit_id]
 ```
 
 ### hard（谨慎使用）
@@ -99,4 +101,5 @@ git push -f
 
 - 本地撤销之后，`push`之前不需要进行`pull`，不然远程的会将本次撤销进行覆盖
 - `push -f` 是 `push --force` 的简写形式,意思是强制推送`(force push)`
+- 撤销之后，其他同事如果之前`git pull`过你的这次提交记录，那么他需要执行 `git reset --hard origin/分支名`将本地分支重置为与远程分支相同的状态，包括分支指针的位置和提交记录。
   :::
