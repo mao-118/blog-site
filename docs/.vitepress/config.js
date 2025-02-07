@@ -3,9 +3,9 @@ import { getSideBar } from "../utils";
 module.exports = {
   title: "Mao Lihang's blog",
   description: "vue,js,node,html,css,react,前端,微前端,webpack,vite,vue3",
-  base: "/blog-site/",
+  base: "./",
   head: [
-    ["link", { rel: "icon", href: "/blog-site/avtt.svg", crossorigin: "" }],
+    ["link", { rel: "icon", href: "/avtt.svg", crossorigin: "" }],
     ["meta", { name: "referrer", content: "never" }],
   ],
   themeConfig: {
@@ -60,7 +60,7 @@ module.exports = {
     },
     footer: {
       message: "转载请注明出处",
-      copyright: "Copyright © 2019-present maolihang",
+      copyright: "Copyright © 2025-present maolihang",
     },
   },
 };
